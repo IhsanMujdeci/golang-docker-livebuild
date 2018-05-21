@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  app:
+    environment:
+      PORT: ":3002"
+    volumes:
+      - .:/go/src/github.com/ihsanmujdeci/docker/boilerplate
+    working_dir: /go/src/github.com/ihsanmujdeci/docker/boilerplate/cmd
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: gin --appPort 3002 run docker_boil.go
+    ports: 
+      - "3002:3000"   
