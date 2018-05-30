@@ -17,7 +17,7 @@ func main() {
 		type resp struct {
 			Hello string
 		}
-		ctx.JSON(resp{Hello: "Ryo"})
+		ctx.JSON(resp{Hello: "Ali"})
 	})
 
 	app.Run(iris.Addr(address))

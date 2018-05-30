@@ -1,12 +1,10 @@
-NAME = go-docker-boilerplate
-
 default: build
 
 build:
-	docker build -t ${NAME} .
+	sudo docker-compose build
 
-run:
-	docker run 
-	--publish 6060:3001 
-	--name test --rm 
-	${NAME}
+up:
+	sudo docker-compose up 
+
+down:
+	sudo docker-compose down
