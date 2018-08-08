@@ -2,10 +2,6 @@ default: build
 
 build:
 	docker-compose -f ./.docker-compose/run.yml build
-	docker-compose -f ./.docker-compose/dev.yml build
-
-build-prod:
-	docker-compose -f ./.docker-compose/run.yml build
 
 build-dev:
 	docker-compose -f ./.docker-compose/dev.yml build
