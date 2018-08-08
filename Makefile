@@ -1,10 +1,23 @@
 default: build
 
 build:
-	sudo docker-compose build
+	docker-compose -f ./.docker-compose/run.yml build
+	docker-compose -f ./.docker-compose/dev.yml build
 
-up:
-	sudo docker-compose up 
+build-prod:
+	docker-compose -f ./.docker-compose/run.yml build
+
+build-dev:
+	docker-compose -f ./.docker-compose/dev.yml build
 
 down:
-	sudo docker-compose down
+	docker-compose down
+
+watch:
+	docker-compose -f ./.docker-compose/watch.yml up
+
+dev: 
+	docker-compose -f ./.docker-compose/dev.yml up
+
+run: 
+	docker-compose -f ./.docker-compose/run.yml up
