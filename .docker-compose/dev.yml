@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  app:
+    env_file:
+        ../.env
+
+    environment:
+        GOPATH: "/go"
+        GOBIN: "/go/bin"
+
+    volumes:
+        - ../src:/go/src/app
+
+    working_dir: /go/src/app
+
+    build:
+        context: ../
+        dockerfile: ./.docker/dev.dockerfile
+
+    command: go run main.go
+
+    ports: 
+      - "$PORT:$PORT"   
